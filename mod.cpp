@@ -1,0 +1,15 @@
+name = "Roots Drone Feed";
+author = "Root";
+tooltip = "Roots Drone Feed";
+tooltipOwned = "Roots Drone Feed";
+picture = "root_dronefeed_logo.paa";
+logo = "root_dronefeed_logo.paa";
+logoOver = "root_dronefeed_logo.paa";
+logoSmall = "root_dronefeed_logo.paa";
+action = "https://github.com/A3-Root/Root_DroneFeed";
+actionName = "Website";
+overview = "Roots Drone Feed";
+hidePicture = 0;
+hideName = 0;
+overviewText = "Roots Drone Feed";
+overviewFootnote = "Client side mod to display Drone Feed / Satellite View to all players";

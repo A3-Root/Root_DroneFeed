@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ROOT_DroneFeed">
+    <Package name="Actions">
+        <Key ID="STR_ROOT_DRONEFEED_ACTION_OPEN_MAP">
+            <English>Open Map (Satellite Control)</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ACTION_RELEASE_CONTROL">
+            <English>Release Feed Control</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ACTION_TAKE_CONTROL">
+            <English>Take Feed Control</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ACTION_VISION">
+            <English>Vision: %1</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ACTION_ZOOM">
+            <English>Zoom Level %1</English>
+        </Key>
+    </Package>
+    <Package name="Errors">
+        <Key ID="STR_ROOT_DRONEFEED_ERR_INVALID_ALTITUDE">
+            <English>Error: Invalid altitude for satellite mode</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ERR_INVALID_MODE">
+            <English>Error: Invalid feed mode</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ERR_INVALID_SCREEN">
+            <English>Error: Invalid screen object</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ERR_NO_DRONE">
+            <English>Error: No drone specified for drone feed mode</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ERR_NO_USERS">
+            <English>Error: No authorized users specified</English>
+        </Key>
+    </Package>
+    <Package name="Messages">
+        <Key ID="STR_ROOT_DRONEFEED_ALREADY_CONTROLLING">
+            <English>You are already controlling this feed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ALREADY_QUEUED">
+            <English>You are already queued for this feed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_CONTROL_GRANTED">
+            <English>Feed control granted</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_CONTROL_RELEASED">
+            <English>Feed control released</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_CONTROL_REQUEST">
+            <English>%1 is requesting feed control</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_DRONE_DESTROYED">
+            <English>Drone destroyed for feed %1</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_FEED_CREATED">
+            <English>Feed created successfully</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_FEED_MODIFIED">
+            <English>Feed modified successfully</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_FEED_TERMINATED_DRONE">
+            <English>Feed terminated: drone destroyed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_NOT_CONTROLLING">
+            <English>You are not controlling this feed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_NO_ACCESS">
+            <English>You do not have access to this feed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_NO_FEEDS">
+            <English>No active feeds found</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_POSITION_UPDATED">
+            <English>Satellite position updated</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_QUEUED">
+            <English>Queued for feed control</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SCREEN_DESTROYED">
+            <English>Screen destroyed for feed %1, select new screen</English>
+        </Key>
+    </Package>
+    <Package name="Settings">
+        <Key ID="STR_ROOT_DRONEFEED_SETTINGS_CATEGORY">
+            <English>ROOT Drone Feed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_ACE_ENABLED">
+            <English>Enable ACE Interactions</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_ACE_ENABLED_DESC">
+            <English>Enable ACE interaction menus for feed control</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_ADMIN_NOTIFY">
+            <English>Admin Notification Method</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_ADMIN_NOTIFY_DESC">
+            <English>How to notify Zeus/admins about feed events</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_DEFAULT_ALTITUDE">
+            <English>Default Satellite Altitude</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_DEFAULT_ALTITUDE_DESC">
+            <English>Default altitude in meters for satellite feeds</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_DEFAULT_RADIUS">
+            <English>Default Activation Radius</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_DEFAULT_RADIUS_DESC">
+            <English>Default radius in meters for feed activation</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_MULTI_CONTROL">
+            <English>Allow Multiple Feed Control</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SETTING_MULTI_CONTROL_DESC">
+            <English>Allow a single player to control multiple feeds simultaneously</English>
+        </Key>
+    </Package>
+    <Package name="Zeus">
+        <Key ID="STR_ROOT_DRONEFEED_ALTITUDE">
+            <English>Altitude (meters)</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_AUTHORIZED_USERS">
+            <English>Authorized Users</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_CUSTOM_OBJECT">
+            <English>Custom Object Class (Optional)</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_DISPLAY_OBJECT">
+            <English>Display Object</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_DRONE">
+            <English>Drone</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_DRONE_ALTITUDE">
+            <English>Drone Altitude (meters)</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_DRONE_CLASS">
+            <English>Drone Class Name</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_FEED_MODE">
+            <English>Feed Mode</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_NEW_AUTHORIZED_USERS">
+            <English>New Authorized Users (Optional)</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_NEW_RADIUS">
+            <English>New Activation Radius</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_OR_SPAWN_NEW">
+            <English>Action</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_OWNERSHIP">
+            <English>Access Scope</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_RADIUS">
+            <English>Activation Radius (meters)</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SELECT_DRONE">
+            <English>Select or Spawn Drone</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SELECT_FEED">
+            <English>Select Feed</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_SPAWN_DRONE">
+            <English>Spawn New Drone</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_TEXTURE_ID">
+            <English>Texture ID</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ZEUS_GROUND_TITLE">
+            <English>Drone Feed - Ground Placement</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ZEUS_MODIFY_TITLE">
+            <English>Drone Feed - Modify Existing</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ZEUS_OBJECT_TITLE">
+            <English>Drone Feed - Object Assignment</English>
+        </Key>
+        <Key ID="STR_ROOT_DRONEFEED_ZEUS_PLAYER_TITLE">
+            <English>Drone Feed - Player Assignment</English>
+        </Key>
+    </Package>
+</Project>

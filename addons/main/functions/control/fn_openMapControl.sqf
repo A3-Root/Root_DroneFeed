@@ -31,25 +31,27 @@ systemChat format ["DEBUG: openMapControl called for feedId=%1", _feedId];
 openMap true;
 
 private _mapClickId = format ["ROOT_DRONEFEED_MAPCLICK_%1", _feedId];
-systemChat format ["DEBUG: Registering map click handler with id=%1", _mapClickId];
+systemChat format ["DEBUG: Registering map click handler with id=%1, feedId=%2", _mapClickId, _feedId];
 
-[_mapClickId, "onMapSingleClick", {
-    params ["_units", "_pos", "_alt", "_shift"];
-    _thisArgs params ["_feedId"];
+// Store feedId in handler namespace by capturing it in closure
+[_mapClickId, "onMapSingleClick", compile format [
+    "params ['_units', '_pos', '_alt', '_shift'];
+    private _feedId = '%1';
 
-    systemChat format ["DEBUG: Map clicked! feedId=%1, pos=%2", _feedId, _pos];
+    systemChat format ['DEBUG: Map clicked! feedId=%%1, pos=%%2', _feedId, _pos];
 
     private _feedData = [_feedId] call Root_fnc_getFeedData;
-    systemChat format ["DEBUG: getFeedData returned: %1", if (isNil "_feedData") then {"nil"} else {str _feedData}];
+    systemChat format ['DEBUG: getFeedData returned: %%1', if (isNil '_feedData') then {'nil'} else {str _feedData}];
 
-    if (isNil "_feedData") then {
-        systemChat "DEBUG: feedData is nil, cannot handle map click";
+    if (isNil '_feedData') then {
+        systemChat 'DEBUG: feedData is nil, cannot handle map click';
     } else {
         [_feedData, _pos] call Root_fnc_handleMapClick;
-        hint parseText format ["<t color='%1'>%2</t>", COLOR_SUCCESS, localize "STR_ROOT_DRONEFEED_POSITION_UPDATED"];
-    };
-
-}, [_feedId]] call BIS_fnc_addStackedEventHandler;
+        hint parseText format ['<t color=''%%1''>%%2</t>', '%2', localize 'STR_ROOT_DRONEFEED_POSITION_UPDATED'];
+    };",
+    _feedId,
+    COLOR_SUCCESS
+]] call BIS_fnc_addStackedEventHandler;
 systemChat "DEBUG: Map click handler registered successfully";
 
 [{

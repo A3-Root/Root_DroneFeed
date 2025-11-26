@@ -41,12 +41,21 @@ if (isServer) then {
 if (hasInterface) then {
     private _clientFeeds = createHashMap;
     missionNamespace setVariable [GVAR_CLIENT_FEEDS, _clientFeeds, false];
+    LOG_DEBUG("Client feeds hashmap initialized");
 
     [EVENT_FEED_CREATED, {
         params ["_feedData"];
 
+        private _feedId = _feedData get "feedId";
+        private _feedMode = _feedData get "feedMode";
+        private _screenObject = _feedData get "screenObject";
+
+        LOG_DEBUG_4("EVENT_FEED_CREATED: Received for feed %1, mode %2, screen %3, data %4",_feedId,_feedMode,_screenObject,_feedData);
+
         [_feedData] call FUNC(createCamera);
         [player, _feedData] call FUNC(addControlActions);
+
+        LOG_DEBUG_1("EVENT_FEED_CREATED: Camera and control actions created for %1",_feedId);
     }] call CBA_fnc_addEventHandler;
 
     [EVENT_FEED_DELETED, {
@@ -114,6 +123,7 @@ if (hasInterface) then {
             };
         };
     }] call CBA_fnc_addEventHandler;
+
 };
 
 LOG_INFO("Post-init complete");

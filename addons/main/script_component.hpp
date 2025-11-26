@@ -11,6 +11,7 @@
 #include "\z\root_dronefeed\addons\main\script_mod.hpp"
 
 // Enable debug mode (comment out for production)
+#define DEBUG_ENABLED_ROOT_DRONEFEED
 #ifdef DEBUG_ENABLED_ROOT_DRONEFEED
     #define DEBUG_MODE_FULL
 #endif

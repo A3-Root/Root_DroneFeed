@@ -31,6 +31,34 @@ private _feedMode = _feedData get "feedMode";
 if (isNull _screenObject) exitWith {};
 
 _screenObject addAction [
+    "<t color='#FFD966'>Reset Camera Feed</t>",
+    {
+        params ["_target", "_caller", "_actionId", "_arguments"];
+        _arguments params ["_feedData"];
+
+        private _camera = _feedData get "cameraObject";
+        private _rttIdentifier = _feedData get "rttIdentifier";
+        private _feedId = _feedData get "feedId";
+
+        if (!isNull _camera && {!isNil "_rttIdentifier"}) then {
+            _camera cameraEffect ["Internal", "Back", _rttIdentifier];
+            hint parseText format ["<t color='%1'>Camera feed restored for %2</t>", "#8ce10b", _feedId];
+            LOG_DEBUG_2("Manual camera reset for feed %1 by %2",_feedId,name _caller);
+        } else {
+            hint parseText format ["<t color='%1'>Camera feed error - invalid camera or RTT</t>", "#fa4c58"];
+            LOG_ERROR_1("Failed to reset camera for feed %1 - invalid camera or RTT",_feedId);
+        };
+    },
+    [_feedData],
+    10,
+    true,
+    true,
+    "",
+    "true",
+    15
+];
+
+_screenObject addAction [
     localize "STR_ROOT_DRONEFEED_ACTION_TAKE_CONTROL",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];

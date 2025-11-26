@@ -15,7 +15,9 @@
  * Public: No
  */
 
-if (!hasInterface) exitWith {};
+if (!hasInterface) exitWith {
+    LOG_DEBUG("setupSatelliteFeed: No interface, exiting");
+};
 
 params [
     ["_feedData", createHashMap, [createHashMap]]
@@ -26,6 +28,8 @@ private _altitude = _feedData get "altitude";
 private _feedId = _feedData get "feedId";
 private _screenObject = _feedData get "screenObject";
 
+LOG_DEBUG_4("setupSatelliteFeed: Starting for feed %1, camera %2, altitude %3, screen %4",_feedId,_camera,_altitude,_screenObject);
+
 if (isNull _camera) exitWith {
     LOG_ERROR_1("setupSatelliteFeed: No camera for feed %1",_feedId);
 };
@@ -34,9 +38,13 @@ private _screenPos = getPosASL _screenObject;
 private _startPos = [_screenPos select 0, _screenPos select 1, _altitude];
 private _targetPos = [_screenPos select 0, _screenPos select 1, 0];
 
+LOG_DEBUG_3("setupSatelliteFeed: Screen pos %1, camera start pos %2, target pos %3",_screenPos,_startPos,_targetPos);
+
 _camera camSetPos _startPos;
 _camera camSetTarget _targetPos;
 _camera camCommit 0;
+
+LOG_DEBUG_3("setupSatelliteFeed: Camera positioned at %1 looking at %2 for feed %3",_startPos,_targetPos,_feedId);
 
 [{
     params ["_args", "_handle"];

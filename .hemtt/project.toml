@@ -1,22 +1,6 @@
 name = "Roots Drone Feed"
-author = "Root"
 prefix = "root_dronefeed"
 mainprefix = "z"
-
-[files]
-include = [
-    "mod.cpp",        
-    "meta.cpp",       
-    "LICENSE",
-    "root_dronefeed_logo.paa",
-    "README*.md",
-]
-exclude = [
-    ".gitignore",
-    ".editorconfig",
-    "*.md",
-    "*.json",
-]
 
 [properties]
 author = "Root"

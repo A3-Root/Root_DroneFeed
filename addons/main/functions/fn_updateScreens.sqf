@@ -2,6 +2,8 @@
 
 params ["_screens"];
 
+["updateScreens start", format ["screens=%1", _screens]] call FUNC(debugLog);
+
 private _states = missionNamespace getVariable [QGVAR(localScreenStates), []];
 private _removeFunc = missionNamespace getVariable ["root_dronefeed_fnc_removeLocalScreen", {}];
 private _loopFunc = missionNamespace getVariable ["root_dronefeed_fnc_cameraLoop", {}];

@@ -2,6 +2,8 @@
 
 params ["_screenId"];
 
+["removeScreen start", format ["screenId=%1 isServer=%2", _screenId, isServer]] call FUNC(debugLog);
+
 if (!isServer) exitWith {
     [_screenId] remoteExec ["root_dronefeed_fnc_removeScreen", 2];
 };

@@ -2,6 +2,8 @@
 
 params ["_screenId", "_value"];
 
+["setFov start", format ["screenId=%1 value=%2 isServer=%3", _screenId, _value, isServer]] call FUNC(debugLog);
+
 if (!isServer) exitWith {
     [_screenId, _value] remoteExec ["root_dronefeed_fnc_setFov", 2];
 };

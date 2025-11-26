@@ -2,6 +2,8 @@
 
 if (!hasInterface) exitWith {};
 
+["clientInit start", format ["player=%1", player]] call FUNC(debugLog);
+
 if (isNil {missionNamespace getVariable QGVAR(localScreenStates)}) then {
     missionNamespace setVariable [QGVAR(localScreenStates), [], false];
 };

@@ -2,6 +2,8 @@
 
 params ["_screen", "_screenId", "_allowEveryone"];
 
+["addActions start", format ["screen=%1 id=%2 allowEveryone=%3", _screen, _screenId, _allowEveryone]] call FUNC(debugLog);
+
 private _actions = [];
 
 _actions pushBack (_screen addAction [

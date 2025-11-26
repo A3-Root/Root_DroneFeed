@@ -2,6 +2,8 @@
 
 params ["_uav"];
 
+["getAimPos start", format ["uav=%1", _uav]] call FUNC(debugLog);
+
 if (isNull _uav) exitWith {[]};
 
 private _cfg = configOf _uav;

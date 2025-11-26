@@ -2,6 +2,8 @@
 
 params ["_screenId"];
 
+["removeLocalScreen start", format ["screenId=%1", _screenId]] call FUNC(debugLog);
+
 private _states = missionNamespace getVariable [QGVAR(localScreenStates), []];
 private _index = _states findIf {(_x select 0) isEqualTo _screenId};
 if (_index == -1) exitWith {};

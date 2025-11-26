@@ -3,4 +3,5 @@
 #define MOD_NAME "Roots Drone Feed"
 
 #define PREFIX root_dronefeed
+#define MAINPREFIX z
 #define REQUIRED_VERSION 2.14

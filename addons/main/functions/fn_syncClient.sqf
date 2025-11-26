@@ -2,6 +2,8 @@
 
 params ["_requester"];
 
+["syncClient start", format ["requester=%1", _requester]] call FUNC(debugLog);
+
 private _screens = missionNamespace getVariable [QGVAR(screens), []];
 private _target = owner _requester;
 if (isNil "remoteExecutedOwner") then {

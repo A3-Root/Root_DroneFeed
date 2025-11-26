@@ -1,5 +1,12 @@
 #include "script_component.hpp"
 
+// Ensure debugLog is available before any early calls
+private _debugFn = compile preprocessFileLineNumbers QPATHTOF(functions\fn_debugLog.sqf);
+// Register under both the component-scoped FUNC name and the generic name for compatibility
+missionNamespace setVariable [QUOTE(FUNC(debugLog)), _debugFn, true];
+missionNamespace setVariable [QUOTE(root_dronefeed_fnc_debugLog), _debugFn, true];
+["XEH_preInit start", ""] call _debugFn;
+
 if (isNil {missionNamespace getVariable QGVAR(screens)}) then {
     missionNamespace setVariable [QGVAR(screens), [], true];
 };
@@ -44,6 +51,15 @@ if (isNil {missionNamespace getVariable QGVAR(terminalClasses)}) then {
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(debugEnabled),
+    "CHECKBOX",
+    ["Debug Logging", "If enabled, verbose diagnostics are written to the RPT for troubleshooting."],
+    ["Roots Drone Feed", "Debug"],
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowAnyDefault),
     "CHECKBOX",
     ["Allow any player", "If disabled, only Zeus (curators) may take drone control unless overridden per screen."],
@@ -59,6 +75,7 @@ REGISTER_FNC(syncClient);
 REGISTER_FNC(resetCameras);
 REGISTER_FNC(getAimPos);
 REGISTER_FNC(cameraLoop);
+REGISTER_FNC(debugLog);
 REGISTER_FNC(removeLocalScreen);
 REGISTER_FNC(addActions);
 REGISTER_FNC(updateScreens);

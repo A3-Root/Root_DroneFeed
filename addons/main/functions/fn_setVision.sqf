@@ -2,6 +2,8 @@
 
 params ["_screenId", "_mode"];
 
+["setVision start", format ["screenId=%1 mode=%2 isServer=%3", _screenId, _mode, isServer]] call FUNC(debugLog);
+
 if (!isServer) exitWith {
     [_screenId, _mode] remoteExec ["root_dronefeed_fnc_setVision", 2];
 };

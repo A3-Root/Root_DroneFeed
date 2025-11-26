@@ -1,5 +1,7 @@
 #include "..\script_component.hpp"
 
+["resetCameras start", ""] call FUNC(debugLog);
+
 private _states = missionNamespace getVariable [QGVAR(localScreenStates), []];
 if (_states isEqualTo []) exitWith {};
 

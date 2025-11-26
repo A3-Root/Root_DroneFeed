@@ -2,6 +2,8 @@
 
 params ["_screenId", "_uav", "_cam", "_rtt"];
 
+["cameraLoop start", format ["id=%1 uav=%2 cam=%3 rtt=%4", _screenId, _uav, _cam, _rtt]] call FUNC(debugLog);
+
 private _aimFunc = missionNamespace getVariable ["root_dronefeed_fnc_getAimPos", {}];
 private _sleep = 0.05;
 

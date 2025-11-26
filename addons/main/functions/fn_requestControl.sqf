@@ -2,6 +2,8 @@
 
 params ["_screenId", "_caller"];
 
+["requestControl start", format ["screenId=%1 caller=%2 isServer=%3", _screenId, _caller, isServer]] call FUNC(debugLog);
+
 if (!isServer) exitWith {
     [_screenId, _caller] remoteExec ["root_dronefeed_fnc_requestControl", 2];
 };

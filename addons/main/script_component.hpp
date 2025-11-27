@@ -2,4 +2,5 @@
 #define COMPONENT_BEAUTIFIED Main
 
 #include "script_mod.hpp"
+#include "script_macros.hpp"
 #include "\x\cba\addons\main\script_macros_common.hpp"

@@ -43,7 +43,7 @@ private _icon = "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\attack_ca.paa";
 
     private _dialogControls = [];
     if (!isNull _object) then {
-        _dialogControls pushBack ["TOOLBOX:YESNO", ["Use existing object", "Re-use the module placement object as the feed screen."], true, true];
+        _dialogControls pushBack ["TOOLBOX:YESNO", ["Use existing object", "Re-use the module placement object as the feed screen."], true];
     };
 
     // Zen COMBO defaults must match the value type; use the first entry explicitly
@@ -54,7 +54,7 @@ private _icon = "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\attack_ca.paa";
     _dialogControls pushBack ["COMBO", ["UAV Source", "Drone providing the live feed."], [_uavValues, _uavNames, _defaultUavValue]];
     _dialogControls pushBack ["SLIDER", ["Initial FoV", "Default camera zoom for this screen."], [0.05, 1, _defaultFoV, 2]];
     _dialogControls pushBack ["COMBO", ["Vision Mode", "Initial PiP effect applied to the feed."], [[0, 1, 2], ["Normal", "Night Vision", "Thermal"], 0]];
-    _dialogControls pushBack ["TOOLBOX:YESNO", ["Allow any player", "If disabled, only Zeus units may take feed control."], _defaultAllowAll, true];
+    _dialogControls pushBack ["TOOLBOX:YESNO", ["Allow any player", "If disabled, only Zeus units may take feed control."], _defaultAllowAll];
 
     if (_debugEnabled) then {
         ["Dialog controls prepared", format ["controls=%1", _dialogControls]] call _logDebug;

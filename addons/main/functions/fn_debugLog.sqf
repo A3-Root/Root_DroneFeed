@@ -10,7 +10,7 @@ if !(_detailStr isEqualType "") then {
 };
 
 // Compact, filter stack trace to avoid huge blank sections
-private _stackRaw = diag_stackTrace;
+private _stackRaw = diag_stacktrace;
 private _stackText = _stackRaw;
 if (_stackRaw isEqualType []) then {
     private _filtered = _stackRaw select {

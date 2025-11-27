@@ -20,5 +20,6 @@ Client-side Zeus module that spawns projector screens showing the turret feed of
 ## Build
 
 ```sh
+hemtt check -p
 hemtt build
 ```
